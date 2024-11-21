@@ -20,7 +20,11 @@ int main() {
             << "In the interval [" << startingInterval[0] << "," << startingInterval[1] << "]" << endl
             << "With a relative error percentage of " << relativeErrorPercentage << "%" << endl << endl << endl;
     float interval[2] = {startingInterval[0], startingInterval[1]};
-    bisect(interval);
+    if (has_solution(interval)) {
+        bisect(interval);
+    } else {
+        cout << "The starting interval doesn't surround the root" << endl;
+    }
     return 0;
 }
 
